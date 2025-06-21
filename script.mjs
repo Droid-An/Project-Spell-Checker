@@ -22,16 +22,24 @@ function handleInput() {
   console.log(wordsList);
   const mistakenWords = [];
   for (const word of wordsList) {
+    // Remove punctuation around the word
     const cleanedWord = word.replace(/^[^\w']+|[^\w']+$/g, "").toLowerCase();
-    if (cleanedWord === "") continue
-    if (!words.includes(cleanedWord)) {
+    if (cleanedWord === "") continue;
+
+    // Check for hyphenated words
+    const parts = cleanedWord.split("-");
+
+    // A word is valid only if ALL parts are in the dictionary
+    const isValid = parts.every((part) => words.includes(part));
+
+    if (!words.includes(cleanedWord) && !isValid) {
       mistakenWords.push(cleanedWord);
     }
   }
   listOfMistakes.innerHTML = "";
   mistakesMessage.style.display = "none";
   console.log(mistakenWords);
-  if (mistakenWords.length!=0) {
+  if (mistakenWords.length != 0) {
     //'' is counted as a item in array
     renderListOfMistakes(mistakenWords);
   }
