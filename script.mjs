@@ -14,6 +14,10 @@ const mistakesMessage = document.querySelector("#mistakesMessage");
 
 checkButton.addEventListener("click", (e) => {
   e.preventDefault();
+  handleInput();
+});
+
+function handleInput() {
   const wordsList = textInput.value.split(" ");
   const mistakenWords = [];
   for (const word of wordsList) {
@@ -28,7 +32,7 @@ checkButton.addEventListener("click", (e) => {
     //'' is counted as a item in array
     renderListOfMistakes(mistakenWords);
   }
-});
+}
 
 function renderListOfMistakes(mistakenWords) {
   for (const word of mistakenWords) {
@@ -47,6 +51,7 @@ function createAddToDictBtn(word) {
   addToDictBtn.addEventListener("click", () => {
     words.push(word);
     console.log(words);
+    handleInput()
   });
 
   return addToDictBtn;
