@@ -19,16 +19,19 @@ checkButton.addEventListener("click", (e) => {
 
 function handleInput() {
   const wordsList = textInput.value.split(" ");
+  console.log(wordsList);
   const mistakenWords = [];
   for (const word of wordsList) {
-    if (!words.includes(word)) {
-      mistakenWords.push(word);
+    const cleanedWord = word.replace(/^[^\w']+|[^\w']+$/g, "").toLowerCase();
+    if (cleanedWord === "") continue
+    if (!words.includes(cleanedWord)) {
+      mistakenWords.push(cleanedWord);
     }
   }
   listOfMistakes.innerHTML = "";
   mistakesMessage.style.display = "none";
-
-  if (mistakenWords[0] !== "") {
+  console.log(mistakenWords);
+  if (mistakenWords.length!=0) {
     //'' is counted as a item in array
     renderListOfMistakes(mistakenWords);
   }
@@ -51,7 +54,7 @@ function createAddToDictBtn(word) {
   addToDictBtn.addEventListener("click", () => {
     words.push(word);
     console.log(words);
-    handleInput()
+    handleInput();
   });
 
   return addToDictBtn;
