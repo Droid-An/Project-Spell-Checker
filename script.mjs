@@ -8,7 +8,7 @@ export function checkText(text) {
     // Remove punctuation around the word
     const cleanedWord = word.replace(/^[^\w']+|[^\w']+$/g, "").toLowerCase();
     if (cleanedWord === "") continue;
-
+    if (word[0] === word[0].toUpperCase()) continue;
     // Check for hyphenated words
     const parts = cleanedWord.split("-");
 
@@ -23,5 +23,3 @@ export function checkText(text) {
   console.log(mistakenWords);
   return mistakenWords;
 }
-
-
