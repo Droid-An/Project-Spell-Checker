@@ -11,7 +11,13 @@
 
     <form id="spellForm">
       <label for="textInput">Enter the text to check</label>
-      <input type="text" id="textInput" name="textInput" />
+      <textarea
+        id="textInput"
+        name="textInput"
+        rows="6"
+        cols="50"
+        placeholder="Enter your text here..."
+      ></textarea>
       <button id="checkButton" type="submit">Check spelling</button>
     </form>
     <div id="mistakesMessage" style="display: none">
