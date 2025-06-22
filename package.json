@@ -1,0 +1,13 @@
+{
+  "name": "project-spell-checker",
+  "version": "1.0.0",
+  "description": "spell checker",
+  "main": "web.mjs",
+  "scripts": {
+    "test": "node script.test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Droid-An/Project-Spell-Checker.git"
+  }
+}
