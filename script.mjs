@@ -11,12 +11,17 @@ export function checkText(text) {
     if (word[0] === word[0].toUpperCase()) continue;
     // Check for hyphenated words
     const parts = cleanedWord.split("-");
-
+    console.log(parts);
     // A word is valid only if ALL parts are in the dictionary
-    const isValid = parts.every((part) => words.includes(part));
-
-    if (!words.includes(cleanedWord) && !isValid) {
-      mistakenWords.push(cleanedWord);
+    // const isValid = parts.every((part) => words.includes(part));
+    if (!words.includes(cleanedWord)) {
+      if (parts.length > 1) {
+        for (let part of parts) {
+          if (!words.includes(part)) {
+            mistakenWords.push(part);
+          }
+        }
+      } else mistakenWords.push(cleanedWord);
     }
   }
 

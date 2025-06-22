@@ -1,7 +1,6 @@
 import { checkText } from "./script.mjs";
 import assert from "node:assert";
 import test from "node:test";
-import words from "./words.json" with { type: "json" };
 
 test("he go to the island", () => {
   assert.deepEqual(checkText("he go to the island"), []);
