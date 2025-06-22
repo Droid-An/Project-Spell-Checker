@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script type="module" src="web.mjs"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <title>Spell Checker</title>
@@ -10,13 +9,15 @@
   <body>
     <h1>Spell Checker</h1>
 
-    <label for="textInput">Enter the text to check</label>
-
-    <input type="text" id="textInput" name="textInput" />
-    <button id="checkButton">check spelling</button>
+    <form id="spellForm">
+      <label for="textInput">Enter the text to check</label>
+      <input type="text" id="textInput" name="textInput" />
+      <button id="checkButton" type="submit">Check spelling</button>
+    </form>
     <div id="mistakesMessage" style="display: none">
       <h2 id="ListTitle">List of misspelled words</h2>
       <ul id="listOfMistakes"></ul>
     </div>
+    <script type="module" src="web.mjs"></script>
   </body>
 </html>

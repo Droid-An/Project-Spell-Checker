@@ -40,8 +40,3 @@ export function createAddToDictBtn(word) {
   return addToDictBtn;
 }
 
-// window.onload = function () {
-//   document.querySelector(
-//     "body"
-//   ).innerText = `There are ${getDictionarySize()} words in the Basic English dictionary`;
-// };
