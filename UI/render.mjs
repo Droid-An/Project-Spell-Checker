@@ -29,6 +29,7 @@ export function renderListOfMistakes(mistakenWords) {
 
 export function createAddToDictBtn(word) {
   const addToDictBtn = document.createElement("button");
+  addToDictBtn.classList.add("AddButton")
   addToDictBtn.textContent = "Add word to the dictionary";
   addToDictBtn.addEventListener("click", () => {
     words.push(word);
@@ -40,6 +41,7 @@ export function createAddToDictBtn(word) {
 
 export function createAddAllBtn(mistakenWords) {
   const AddAllBtn = document.createElement("button");
+  AddAllBtn.classList.add("AddButton")
   AddAllBtn.textContent = "Add all words to the dictionary";
   AddAllBtn.style.marginBottom = "40px"
   AddAllBtn.addEventListener("click", () => {

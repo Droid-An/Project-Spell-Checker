@@ -1,0 +1,46 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: grid;
+    justify-items: center;
+
+}
+
+textarea, button {
+    font: inherit;
+    border: 1px, #4b4b4b, solid;
+     /* background-color: rgb(234, 245, 220); */
+    display: block;
+     margin-bottom: 1rem;
+    border-radius: 0.5rem; 
+    padding: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 1rem; 
+}
+
+.AddButton {
+    background-color: gainsboro;
+     margin-top: 5px;
+}
+
+.AddButton:first-child {
+    background-color: gainsboro;
+     margin-top: 0px;
+}   
+
+textarea {
+    padding: 5px;
+}
+
+#CheckTextLine{
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+#CheckTextLine p{
+color: silver;
+}
