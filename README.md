@@ -1,6 +1,6 @@
 # Project: Spell Checker
 
-When writing text, it is helpful to have a tool to check that you are spelling correctly. Most computers even have it built in to the operating system.
+When writing text, it is helpful to have a tool to check that you are spelling correctly.
 
 This spell checker ckecks for a simplified language called ["Basic English"](https://en.wikipedia.org/wiki/Basic_English) that contains a much smaller set of words than regular English.
 
