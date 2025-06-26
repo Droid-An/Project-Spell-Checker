@@ -1,7 +1,7 @@
 import words from "./words.json" with { type: "json" };
 
 export function checkText(text) {
-  const wordsList = text.split(" ");
+  const wordsList = text.split(/\s+/);
   const mistakenWords = [];
   for (const word of wordsList) {
     // Remove punctuation around the word
