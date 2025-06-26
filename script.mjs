@@ -10,20 +10,27 @@ export function checkText(text) {
 
   // Iterate over each word in the text
   for (const word of wordsList) {
-    // Remove leading/trailing punctuation (excluding apostrophes) and convert to lowercase
-    const cleanedWord = word.replace(/^[^\w']+|[^\w']+$/g, "").toLowerCase();
+    // Remove leading/trailing punctuation (excluding apostrophes)
+    const cleanedWord = word.replace(/^[^\w']+|[^\w']+$/g, "");
 
-    // Skip empty strings after cleaning
-    if (cleanedWord === "") continue;
+        // Skip empty strings after cleaning
+    if (cleanedWord === "") {
+      continue;
+    }
 
     // Ignore capitalized words
-    if (word[0] === word[0].toUpperCase()) continue;
+    if (cleanedWord[0] === cleanedWord[0].toUpperCase()) {
+      continue;
+    }
+
+    // Convert to lowercase
+    const cleanedWordLowerCase = cleanedWord.toLowerCase();
 
     // Check for hyphenated words
-    const parts = cleanedWord.split("-");
+    const parts = cleanedWordLowerCase.split("-");
 
     // If the entire word is not in the dictionary
-    if (!words.includes(cleanedWord)) {
+    if (!words.includes(cleanedWordLowerCase)) {
       if (parts.length > 1) {
         // For hyphenated words, check each part individually
         for (let part of parts) {
@@ -34,7 +41,7 @@ export function checkText(text) {
         }
       } else {
         // Add the whole cleaned word if it's not hyphenated and not found
-        mistakenWords.push(cleanedWord);
+        mistakenWords.push(cleanedWordLowerCase);
       }
     }
   }
