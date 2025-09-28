@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="UTF-8" />
-    <title>Spell Checker</title>
-    <link rel="stylesheet" href="styles.css" />
-    <meta name="description" content="Check that you are spelling correctly" />
-  </head>
-  <body>
-    <header>
-      <h1>Spell Checker</h1>
-    </header>
-    <form id="spellForm">
-      <h2><label for="textInput">Enter the text to check</label></h2>
 
-      <textarea
-        id="textInput"
-        name="textInput"
-        rows="6"
-        cols="50"
-        placeholder="Enter your text here..."
-      ></textarea>
-      <div id="CheckTextLine">
-        <button id="checkButton" type="submit">Check spelling</button>
-        <p id="hint">Press Ctrl + Enter to check spelling</p>
-      </div>
-    </form>
-    <div id="mistakesMessage" style="display: none" aria-live="polite">
-      <h2 id="ListTitle">List of misspelled words</h2>
-      <ul id="listOfMistakes"></ul>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <title>Spell Checker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Check that you are spelling correctly" />
+</head>
+
+<body>
+  <header>
+    <h1>Spell Checker</h1>
+  </header>
+  <form id="spellForm">
+    <h2><label for="textInput">Enter the text to check</label></h2>
+
+    <textarea id="textInput" name="textInput" rows="6" cols="50" placeholder="Enter your text here..."></textarea>
+    <div id="CheckTextLine">
+      <button id="checkButton" type="submit">Check spelling</button>
+      <p id="hint">Press Ctrl + Enter to check spelling</p>
     </div>
-    <script type="module" src="web.mjs"></script>
-  </body>
+  </form>
+  <div id="noMistakesMessage" style="display: none" aria-live="polite">No spell mistakes</div>
+  <div id="mistakesMessage" style="display: none" aria-live="polite">
+    <h2 id="ListTitle">List of misspelled words</h2>
+    <ul id="listOfMistakes"></ul>
+  </div>
+  <script type="module" src="web.mjs"></script>
+</body>
+
 </html>

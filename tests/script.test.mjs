@@ -1,4 +1,4 @@
-import { checkText } from "./script.mjs";
+import { checkText } from "../script.mjs";
 import assert from "node:assert";
 import test from "node:test";
 

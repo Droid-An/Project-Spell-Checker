@@ -1,6 +1,12 @@
-// Import the list of valid words (dictionary) from a JSON file
-import words from "../words.json" with { type: "json" };
+// Import the list of valid words from a JSON file
+let words = [];
 
+async function loadWords() {
+  const response = await fetch("../words.json");
+  words = await response.json();
+}
+
+await loadWords();
 // Import the function that checks for spelling mistakes
 import { checkText } from "../script.mjs";
 
@@ -8,6 +14,7 @@ import { checkText } from "../script.mjs";
 export const textInput = document.querySelector("#textInput");
 export const listOfMistakes = document.querySelector("#listOfMistakes");
 const mistakesMessage = document.querySelector("#mistakesMessage");
+const noMistakesMessage = document.querySelector("#noMistakesMessage");
 
 // This function handles the input processing
 export function handleInput() {
@@ -17,11 +24,14 @@ export function handleInput() {
   // Clear the current list of mistakes from the DOM
   listOfMistakes.innerHTML = "";
   mistakesMessage.style.display = "none";
+  noMistakesMessage.style.display = "none";
 
   // If there are spelling mistakes, show and render them
   if (mistakenWords.length != 0) {
     createAddAllBtn(mistakenWords); // Create "Add all words to the dictionary" button
     renderListOfMistakes(mistakenWords); // Show list of incorrect words
+  } else if (mistakenWords.length == 0) {
+    noMistakesMessage.style.display = "block";
   }
 }
 

@@ -1,4 +1,4 @@
-import { getDictionarySize } from "./common.mjs";
+import { getDictionarySize } from "../common.mjs";
 import assert from "node:assert";
 import test from "node:test";
 
