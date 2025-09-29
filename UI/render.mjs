@@ -1,12 +1,6 @@
-// Import the list of valid words from a JSON file
-let words = [];
+// Import the list of valid words (dictionary) from a JSON file
+import words from "../words.json" with { type: "json" };
 
-async function loadWords() {
-  const response = await fetch("../words.json");
-  words = await response.json();
-}
-
-await loadWords();
 // Import the function that checks for spelling mistakes
 import { checkText } from "../script.mjs";
 

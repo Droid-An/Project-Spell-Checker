@@ -13,7 +13,7 @@ export function checkText(text) {
     // Remove leading/trailing punctuation (excluding apostrophes)
     const cleanedWord = word.replace(/^[^\w']+|[^\w']+$/g, "");
 
-        // Skip empty strings after cleaning
+    // Skip empty strings after cleaning
     if (cleanedWord === "") {
       continue;
     }
